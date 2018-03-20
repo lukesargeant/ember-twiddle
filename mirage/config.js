@@ -2,9 +2,7 @@ import AddonFixture from "./fixtures/addon";
 import EmberDataFixture from "./fixtures/ember-data";
 import config from "../config/environment";
 import Mirage, { faker } from "ember-cli-mirage";
-import Ember from "ember";
-
-const { assign } = Ember;
+import { assign } from '@ember/polyfills';
 
 export default function() {}
 
@@ -28,7 +26,7 @@ export function testConfig() {
   });
 
   this.post('/gists', function(schema, request) {
-    let gist = server.create('gist', { id: faker.random.uuid() });
+    let gist = window.server.create('gist', { id: faker.random.uuid() });
     let response = assign(gist, JSON.parse(request.requestBody));
     return new Mirage.Response(200, {}, response);
   });
@@ -40,7 +38,7 @@ export function testConfig() {
   });
 
   this.post('/gists/:id/forks', () => {
-    let gist = server.create('gist', { id: faker.random.uuid() });
+    let gist = window.server.create('gist', { id: faker.random.uuid() });
     return new Mirage.Response(200, {}, gist);
   });
 

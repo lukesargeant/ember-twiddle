@@ -1,3 +1,5 @@
+/* eslint-disable ember/avoid-leaking-state-in-ember-objects */
+
 /**
  * This is a factory definition for an owner
  */

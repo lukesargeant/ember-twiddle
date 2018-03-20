@@ -1,3 +1,5 @@
+/* eslint-disable ember/avoid-leaking-state-in-ember-objects */
+
 /**
  * This is a factory definition for a gist.
  */
@@ -220,6 +222,3 @@ export default Mirage.Factory.extend({
 ]
 }
 */
-
-
-
