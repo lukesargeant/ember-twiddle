@@ -1,15 +1,17 @@
 import Ember from "ember";
-import resolver from './helpers/resolver';
-import {
-  setResolver
-} from 'ember-qunit';
+import Application from '../app';
+import config from '../config/environment';
+import { setApplication } from '@ember/test-helpers';
+import { start } from 'ember-qunit';
 import createGist from "./helpers/create-gist";
 import runGist from "./helpers/run-gist";
 import runRevision from "./helpers/run-revision";
 import waitForLoadedIFrame from './helpers/wait-for-loaded-iframe';
 import waitForUnloadedIFrame from './helpers/wait-for-unloaded-iframe';
 
-setResolver(resolver);
+setApplication(Application.create(config.APP));
+
+start();
 
 const iframe = "#dummy-content-iframe";
 

@@ -204,7 +204,6 @@ function getEmberCLIBlueprints() {
         "app": "app/files/app/app.js",
         "router": "app/files/app/router.js",
         "test-helper": 'app/files/tests/test-helper.js',
-        "test-resolver": 'app/files/tests/helpers/resolver.js',
         "test-destroy-app": 'app/files/tests/helpers/destroy-app.js',
         "test-module-for-acceptance": 'app/files/tests/helpers/module-for-acceptance.js'
       }

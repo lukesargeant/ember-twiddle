@@ -1,4 +1,4 @@
-/* jshint node: true */
+'use strict';
 
 module.exports = function(environment) {
   var deployTarget = process.env.DEPLOY_TARGET;
@@ -12,8 +12,8 @@ module.exports = function(environment) {
 
   var ENV = {
     modulePrefix: 'ember-twiddle',
-    environment: environment,
-    rootURL: rootURL,
+    environment,
+    rootURL,
     locationType: 'auto',
     host: host,
     githubOauthUrl: githubOauthURL,
@@ -69,6 +69,7 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
 
+    ENV.APP.autoboot = false;
     ENV.host = undefined;
   }
 
